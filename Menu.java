@@ -22,7 +22,7 @@ public class Menu {
 					
 			//Labels
 				JLabel label = new JLabel("Enter Text: ");
-						
+						  
 			//Buttons
 				JButton enter = new JButton("Enter");
 				

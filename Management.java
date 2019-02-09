@@ -16,7 +16,7 @@ public class Management{
 		
 		//Drop Menu 
 		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
-				"Technology","Teachers","Classes","Future Plans", "Housing",
+				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
 				"Financial","Medical","Transport"};
 		
 		JComboBox<String> cBox = new JComboBox(concerns);

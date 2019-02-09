@@ -13,6 +13,15 @@ public class Management{
 		frame.setVisible(true);
 		buildPanel();
 		frame.getContentPane().add(panel);
+		
+		//Drop Menu 
+		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness",
+				"Technology","Teachers","Classes","Future Plans","Noise",
+				"Financial","Medical","Transport","Financial"};
+		
+		JComboBox<String> cBox = new JComboBox(concerns);
+		cBox.setSelectedItem(null);
+		frame.getContentPane().add(cBox);
 	}
 	
 	public void buildPanel() {

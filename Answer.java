@@ -7,3 +7,4 @@ public class Answer {
 	
 	public void take_in(String input_file) {
 		 
+}

@@ -35,6 +35,7 @@ public class Management{
 	public String getFieldValue(String fieldName){
         JTextField field = panel.get(fieldName);
         return field.getText();
+        
     }
-	 */
+	 */  
 }

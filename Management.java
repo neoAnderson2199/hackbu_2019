@@ -79,12 +79,45 @@ public class Management implements ActionListener{
         if (action.equals("Enter")) {
             question = textField.getText();
             label3.setText(selected);
+            int intVal = transtoInt(selected);
+            String output = Answer.read_in(question,intVal);
+            label4.setText(output);
             label2.setText(question);
             textField.setText("");
         }
 	}
 	
-	public String getQuestion() {
-		return question;
+	public int transtoInt(String input) {
+		int retVal = -1;
+		if(input.equals("Food")){
+			retVal = 0;
+		}else if(input.equals("Drugs/Alcohol")){
+			retVal = 1;
+		}else if(input.equals("Fitness/Wellness")){
+			retVal = 2;
+		}else if(input.equals("Maintenance")) {
+			retVal = 3;
+		}else if(input.equals("Technology")) {
+			retVal = 4;
+		}else if(input.equals("Teachers")) {
+			retVal = 5;
+		}else if(input.equals("Students")) {
+			retVal = 6;
+		}else if(input.equals("Classes")) {
+			retVal = 7;
+		}else if(input.equals("Fulture Plans")) {
+			retVal = 8;
+		}else if(input.equals("Housing")) {
+			retVal = 9;
+		}else if(input.equals("Activities")) {
+			retVal = 10;
+		}else if(input.equals("Financial")) {
+			retVal = 11;
+		}else if(input.equals("Medical")) {
+			retVal = 12;
+		}else {
+			retVal = 13;
+		}
+		return retVal;
 	}
 }

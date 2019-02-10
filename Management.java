@@ -19,6 +19,16 @@ public class Management implements ActionListener{
 		frame.setVisible(true);
 		buildPanel();
 		frame.getContentPane().add(panel);
+		
+		//Drop Menu 
+		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
+				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
+				"Financial","Medical","Transport"};
+		
+		JComboBox<String> cBox = new JComboBox(concerns);
+		cBox.setSelectedItem(null);
+		String selected = (String)cBox.getSelectedItem();
+		frame.getContentPane().add(cBox);
 	}
 	
 	public void buildPanel() {

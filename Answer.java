@@ -1,3 +1,5 @@
+package hackbu_2019;
+
 import java.util.*;
 import java.io.*;
 import java.awt.*;
@@ -6,7 +8,7 @@ public class Answer {
 
 	public static String read_in(String input_file, int choice) {
 		String[] problem = input_file.split("\\s+");
-		try(Scanner keys = new Scanner(new FileReader("keyword.txt"))){
+		try(Scanner keys = new Scanner(new FileReader("hackbu_2019/keyword.txt"))){
 			String all_keys = null;
 			int line = 0;
 			while(keys.hasNextLine()) {
@@ -30,7 +32,7 @@ public class Answer {
 				}
 				return reply(30);
 			}
-		}catch(Exception e) {
+		}catch(FileNotFoundException e) {
 			System.out.println("Failed");
 			
 		}

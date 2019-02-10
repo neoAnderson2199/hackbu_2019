@@ -6,22 +6,30 @@ import javax.swing.*;
 
 public class Management implements ActionListener{
 	final JFrame frame = new JFrame("Advice Giver");
+<<<<<<< HEAD
 	private JPanel panel = new JPanel(new GridLayout(1, 1));
 	private JPanel fieldPanel = new JPanel(); 
 	
 	private JTextField textField = new JTextField(30);
 	
 	private JLabel label2 = new JLabel("");
+=======
+	private JPanel panel = new JPanel();
+	private JLabel label2 = new JLabel();
+	private JLabel label3 = new JLabel();
+	private JTextField textField = new JTextField(20);
+>>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
 	private String question;
+	private String selected;
 	
 	public void initialize() {
 		//frame.setLayout(null);
 		frame.setSize(800,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			       
 		frame.setVisible(true);
-		buildPanel();
-		frame.getContentPane().add(panel);
+		frame.add(buildPanel());
 
+<<<<<<< HEAD
 		//Drop Menu 
 	    frame.add(panel, BorderLayout.NORTH);
 	    frame.add(fieldPanel, BorderLayout.CENTER);
@@ -31,8 +39,44 @@ public class Management implements ActionListener{
 
 	    // Options in the combobox
 	    String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
+=======
+/*
+		JComboBox<String> cBox = new JComboBox(concerns);
+		cBox.setSelectedItem(null);
+		selected = (String)cBox.getSelectedItem();
+		frame.getContentPane().add(cBox);
+*/
+	}
+
+	public JPanel buildPanel() {
+		//Whole Panel
+		panel.setLayout(new GridLayout(3,1));
+		//Input Panel
+		JPanel ipanel = new JPanel();
+		ipanel.add(new JLabel("Enter Text: "));
+		ipanel.add(textField);
+		ipanel.add(enterButton());
+		ipanel.add(buildcBox());
+		//Question Panel
+		JPanel qpanel = new JPanel();
+		qpanel.add(new JLabel("your question:"));
+		qpanel.add(label3);
+		qpanel.add(label2);
+		//Output Panel
+		JPanel opanel = new JPanel();
+		opanel.add(new JLabel("suggestion:"));
+		panel.add(ipanel);
+		panel.add(qpanel);
+		panel.add(opanel);
+		return panel; 
+	}
+	
+	public JComboBox buildcBox() {
+		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
+>>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
 				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
 				"Financial","Medical","Transport"};
+<<<<<<< HEAD
 	    
 	    JComboBox<String> cBox = new JComboBox(concerns);
 	    cBox.addActionListener(new ActionListener() {
@@ -50,8 +94,13 @@ public class Management implements ActionListener{
         
         frame.getContentPane().add(cBox);
 
+=======
+		JComboBox cBox = new JComboBox(concerns);
+		return cBox;
+>>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
 	}
 	
+<<<<<<< HEAD
 	public void buildPanel() {				
 		//Labels
 		JLabel label = new JLabel("Enter Text: ");
@@ -64,6 +113,8 @@ public class Management implements ActionListener{
 		panel.add(enterButton());
 	}
 
+=======
+>>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
 	public JButton enterButton() {
 		JButton enter = new JButton("Enter");
 		enter.addActionListener(this);
@@ -76,10 +127,7 @@ public class Management implements ActionListener{
 		String action = ae.getActionCommand();
         if (action.equals("Enter")) {
             question = textField.getText();
-            Point pt = label2.getLocation();
-    		System.out.println(pt);
-    		label2.setHorizontalTextPosition(SwingConstants.CENTER);
-    		System.out.println(pt);
+            label3.setText(selected);
             label2.setText(question);
             textField.setText("");
         }

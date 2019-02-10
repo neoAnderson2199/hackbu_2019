@@ -9,13 +9,13 @@ public class Management implements ActionListener{
 	private JPanel panel = new JPanel();
 	private JLabel label2 = new JLabel();
 	private JLabel label3 = new JLabel();
+	private JLabel label4 = new JLabel();
 	private JComboBox<String> cBox = new JComboBox<String>();
 	private JTextField textField = new JTextField(20);
 	private String question;
 	private String selected;
 	
 	public void initialize() {
-		//frame.setLayout(null);
 		frame.setSize(800,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			       
 		frame.setVisible(true);
@@ -40,6 +40,8 @@ public class Management implements ActionListener{
 		//Output Panel
 		JPanel opanel = new JPanel();
 		opanel.add(new JLabel("suggestion:"));
+		opanel.add(label4);
+		//Panel
 		panel.add(ipanel);
 		panel.add(qpanel);
 		panel.add(opanel);
@@ -62,7 +64,6 @@ public class Management implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
-		// TODO Auto-generated method stub
 		String action = ae.getActionCommand();
         if (action.equals("Enter")) {
             question = textField.getText();

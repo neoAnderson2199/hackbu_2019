@@ -71,9 +71,14 @@ public class Management implements ActionListener{
 		
 		//Image adding
 		 try {
-             image = new ImageIcon("mustard.jpg");
-             imagelabel = new JLabel("",image, JLabel.CENTER); 
+             image = new ImageIcon("light.jpg");  
+             Image im = image.getImage();
+             Image newimg = im.getScaledInstance(70, 70,  java.awt.Image.SCALE_SMOOTH);
+             image = new ImageIcon(newimg);
+             imagelabel = new JLabel("", image, JLabel.CENTER); 
              tpanel.add(imagelabel);
+             
+             
          }catch(Exception e) {}
 		//Panel
 		panel.add(tpanel);
@@ -180,4 +185,3 @@ public class Management implements ActionListener{
 		return retVal;
 	}
 }
-

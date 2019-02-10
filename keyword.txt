@@ -1,15 +1,15 @@
-,undercooked,dirty,unclean,unsanitary,raw,poisoning,vegan,organic,allergy,allergies,allergic, : terrible,bland,bad,awful,disgusting,sweet,sour,bitter,bittersweet,acidic,spicy,dry
-,overdose,emergency,911,issues,addiction, : marijuana,alcohol,tobacco,nicotine,juul,vaping,vape,meth,crystal,heroin,narcotics,depressants,weed,hemp,hashish,brownies,cookies,brownie,cookie
-,fitness,workout,gym,yoga,swimming,classes,running,weights,lifting : mental,counselor,psychologist,psychiatrist,happiness,sadness,stress,depression,happy
-,bugs,rodents,infestation,bug,rodent,animal,animals : leaks,leak,water,plumbing,clogged,pipes,shower,toilet,sink,bed,closet,vomit,mess,stain,electricity,electric,appliances,lighting,lights,desk,door,windows,blinds,power,outlets,outlet,
-,cybercrime,porn,pornography,wifi,wi-fi,pornographic,server,broken,crashed,internet,hacked,hack,hacking,down, : blue,screen,webcam,keyboard,camera,mouse,touchpad,router,headphones,
-,love,attracted,sex,sexual,intercourse,extortion,extorted,inappropriate, : controversial,rude,libel,annoying,quiet,obnoxious,dumb,unknowledgeable,contact,email,information,tangents
-,sexual,sex,intercourse,relationships,relationship,bad,distracted,smoking,juuling,vaping,smarter,idiotic, : obscene,bully,bullying,bullies,cheating,cheated,plagiarising,plagiarised,plagiarism
-,textbook,material,syllabus,information, : difficult,hard,challenging,understand,change,
-,graduate,master's,doctorate,major,degree, : careers,jobs,career,job,employment,resume,cover,letter,application,applications,interview,internship,internships,
-,roommate,annoying,deadly,scary,noisey,creepy,loud,rude,invasive,touches,irritating,switch : neighbors,noise,party,parties,late,neighbor,
-,clubs,activities, : friends,lonely,interests,bored,change,other,
-,accounts,none,no,more,zero,broke : where,bank,exchange,break,change,
-,vomiting,emergency,puking,throwing up,broken,failure,dying,911,suicidal,suicide : flu,cold,strep,virus,depression,anxiety,bipolar,schizophrenia,
-,bus,service,services,shuttle,routes, : zipcar,driving,snow,parking
+undercooked,dirty,unclean,unsanitary,raw,poisoning,vegan,organic,allergy,allergies,allergic : terrible,bland,bad,awful,disgusting,sweet,sour,bitter,bittersweet,acidic,spicy,dry
+overdose,emergency,911,issues,addiction : marijuana,alcohol,tobacco,nicotine,juul,vaping,vape,meth,crystal,heroin,narcotics,depressants,weed,hemp,hashish,brownies,cookies,brownie,cookie
+fitness,workout,gym,yoga,swimming,classes,running,weights,lifting : mental,counselor,psychologist,psychiatrist,happiness,sadness,stress,depression,happy,sleepy,cry
+bugs,rodents,infestation,bug,rodent,animal,animals : leaks,leak,water,plumbing,clogged,pipes,shower,toilet,sink,bed,closet,vomit,mess,stain,electricity,electric,appliances,lighting,lights,desk,door,windows,blinds,power,outlets,outlet
+cybercrime,porn,pornography,wifi,wi-fi,pornographic,server,broken,crashed,internet,hacked,hack,hacking,down : blue,screen,webcam,keyboard,camera,mouse,touchpad,router,headphones
+love,attracted,sex,sexual,intercourse,extortion,extorted,inappropriate : controversial,rude,libel,annoying,quiet,obnoxious,dumb,unknowledgeable,contact,email,information,tangents
+sexual,sex,intercourse,relationships,relationship,bad,distracted,smoking,juuling,vaping,smarter,idiotic : obscene,bully,bullying,bullies,cheating,cheated,plagiarising,plagiarised,plagiarism
+textbook,material,syllabus,information : difficult,hard,challenging,understand,change
+graduate,master's,doctorate,major,degree,grow : careers,jobs,career,job,employment,resume,cover,letter,application,applications,interview,internship,internships,
+roommate,annoying,deadly,scary,noisey,creepy,loud,rude,invasive,touches,irritating,switch : neighbors,noise,party,parties,late,neighbor
+clubs,activities,do : friends,lonely,interests,bored,change,other
+accounts,none,no,more,zero,broke : where,bank,exchange,break,change
+vomiting,emergency,puking,throwing up,broken,failure,dying,911,suicidal,suicide : flu,cold,strep,virus,depression,anxiety,bipolar,schizophrenia
+bus,service,services,shuttle,routes,uber,cab : zipcar,driving,snow,parking,car
 

@@ -40,6 +40,7 @@ public class Answer {
 	}
 
 	public static String reply(int response){
+		Random rand = new Random();
 		if(response == 0){
 			return ("You should instead try buying food from the off campus or cooking for yourself.");
 		}else if(response == 1){
@@ -81,7 +82,7 @@ public class Answer {
 		}else if(response == 19){
 			return ("You should just go join in the fun, you party pooper.");
 		}else if(response == 20){
-			return ("We can't force you to do anything so decidde for yourself what you want to do.");
+			return ("We can't force you to do anything, so decide for yourself what you want to do.");
 		}else if(response == 21){
 			return ("You know what you should make some more friends and do stuff with them.");
 		}else if(response == 22){
@@ -99,7 +100,18 @@ public class Answer {
 		}else if(response == 28){
 			return ("Why are you even on this if you don't have an issue?");
 		}else if(response == 29){
-			return ("I do not understand your issue can you explain it more.");
+			int num = rand.nextInt(5);
+			if (num == 0){
+				return ("I do not understand your issue can you explain it more.");
+			}else if(num == 1){
+				return ("Haha. You call that an issue?");
+			}else if(num == 2){
+				return ("And you think I can solve that?");
+			}else if(num == 3){
+				return ("Well that's not my problem.");
+			}else{
+				return ("Good luck to you.");
+			}
 		}else if(response == 30){
 			return ("Invalid input.");
 		}

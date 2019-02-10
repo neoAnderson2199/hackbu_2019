@@ -6,12 +6,14 @@ import javax.swing.*;
 
 public class Management implements ActionListener{
 	final JFrame frame = new JFrame("Advice Giver");
+
+	private JPanel fieldPanel = new JPanel(); 	
 	private JPanel panel = new JPanel();
 	private JLabel label2 = new JLabel();
 	private JLabel label3 = new JLabel();
 	private JLabel label4 = new JLabel();
-	private JComboBox<String> cBox = new JComboBox<String>();
 	private JTextField textField = new JTextField(20);
+	private JComboBox<String> cBox = new JComboBox<String>();
 	private String question;
 	private String selected;
 	
@@ -48,14 +50,23 @@ public class Management implements ActionListener{
 		return panel; 
 	}
 	
+
 	public JComboBox<String> buildcBox() {
 		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
 				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
-				"Financial","Medical","Transport"};
-		cBox = new JComboBox<String>(concerns);
+				"Financial","Medical","Transport"};    
+	    cBox = new JComboBox<String>(concerns);
+	    cBox.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                selected = (String)cBox.getSelectedItem();
+	            }
+	        });
+		cBox.setSelectedItem(null);
 		return cBox;
 	}
-	
+
+
 	public JButton enterButton() {
 		JButton enter = new JButton("Enter");
 		enter.addActionListener(this);
@@ -67,7 +78,6 @@ public class Management implements ActionListener{
 		String action = ae.getActionCommand();
         if (action.equals("Enter")) {
             question = textField.getText();
-            selected = (String)cBox.getSelectedItem();
             label3.setText(selected);
             label2.setText(question);
             textField.setText("");

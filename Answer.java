@@ -8,7 +8,7 @@ public class Answer {
 
 	public static String read_in(String input_file, int choice) {
 		String[] problem = input_file.split("\\s+");
-		try(Scanner keys = new Scanner(new FileReader("hackbu_2019/keyword.txt"))){
+		try(Scanner keys = new Scanner(new FileReader("keyword.txt"))){
 			String all_keys = null;
 			int line = 0;
 			while(keys.hasNextLine()) {

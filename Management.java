@@ -1,7 +1,6 @@
 package hackbu_2019;
 import java.awt.event.*;
-import java.awt.Dimension;
-import java.awt.Point;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -13,13 +12,13 @@ public class Management implements ActionListener{
 	private String question;
 	
 	public void initialize() {
-		frame.setLayout(null);
+		//frame.setLayout(null);
 		frame.setSize(800,600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			       
 		frame.setVisible(true);
 		buildPanel();
 		frame.getContentPane().add(panel);
-		
+
 		//Drop Menu 
 		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
 				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
@@ -29,6 +28,7 @@ public class Management implements ActionListener{
 		cBox.setSelectedItem(null);
 		String selected = (String)cBox.getSelectedItem();
 		frame.getContentPane().add(cBox);
+
 	}
 	
 	public void buildPanel() {
@@ -36,6 +36,7 @@ public class Management implements ActionListener{
 		//Labels
 		JLabel label = new JLabel("Enter Text: ");
 		// set the position of label2
+		label2.setBounds(new Rectangle(new Point(200, 300), label2.getPreferredSize()));
 		//Add To Panel and Frame
 		panel.add(label);
 		panel.add(label2);

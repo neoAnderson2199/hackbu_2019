@@ -9,6 +9,7 @@ public class Management implements ActionListener{
 	private JPanel panel = new JPanel();
 	private JLabel label2 = new JLabel();
 	private JLabel label3 = new JLabel();
+	private JComboBox<String> cBox = new JComboBox<String>();
 	private JTextField textField = new JTextField(20);
 	private String question;
 	private String selected;
@@ -20,12 +21,6 @@ public class Management implements ActionListener{
 		frame.setVisible(true);
 		frame.add(buildPanel());
 
-/*
-		JComboBox<String> cBox = new JComboBox(concerns);
-		cBox.setSelectedItem(null);
-		selected = (String)cBox.getSelectedItem();
-		frame.getContentPane().add(cBox);
-*/
 	}
 
 	public JPanel buildPanel() {
@@ -51,11 +46,11 @@ public class Management implements ActionListener{
 		return panel; 
 	}
 	
-	public JComboBox buildcBox() {
+	public JComboBox<String> buildcBox() {
 		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
 				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
 				"Financial","Medical","Transport"};
-		JComboBox cBox = new JComboBox(concerns);
+		cBox = new JComboBox<String>(concerns);
 		return cBox;
 	}
 	
@@ -71,6 +66,7 @@ public class Management implements ActionListener{
 		String action = ae.getActionCommand();
         if (action.equals("Enter")) {
             question = textField.getText();
+            selected = (String)cBox.getSelectedItem();
             label3.setText(selected);
             label2.setText(question);
             textField.setText("");

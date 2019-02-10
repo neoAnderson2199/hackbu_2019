@@ -20,9 +20,6 @@ public class Management implements ActionListener{
 		frame.setVisible(true);
 		frame.add(buildPanel());
 
-		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
-				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
-				"Financial","Medical","Transport"};
 /*
 		JComboBox<String> cBox = new JComboBox(concerns);
 		cBox.setSelectedItem(null);
@@ -39,6 +36,7 @@ public class Management implements ActionListener{
 		ipanel.add(new JLabel("Enter Text: "));
 		ipanel.add(textField);
 		ipanel.add(enterButton());
+		ipanel.add(buildcBox());
 		//Question Panel
 		JPanel qpanel = new JPanel();
 		qpanel.add(new JLabel("your question:"));
@@ -52,7 +50,15 @@ public class Management implements ActionListener{
 		panel.add(opanel);
 		return panel;
 	}
-
+	
+	public JComboBox buildcBox() {
+		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
+				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
+				"Financial","Medical","Transport"};
+		JComboBox cBox = new JComboBox(concerns);
+		return cBox;
+	}
+	
 	public JButton enterButton() {
 		JButton enter = new JButton("Enter");
 		enter.addActionListener(this);

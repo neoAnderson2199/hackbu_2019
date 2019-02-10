@@ -3,7 +3,6 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
-
 public class Management implements ActionListener{
 	final JFrame frame = new JFrame("Advice Giver");
 
@@ -55,7 +54,7 @@ public class Management implements ActionListener{
 		ipanel.add(enterButton());
 		//Question Panel
 		JPanel qpanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		JLabel text3 = new JLabel("Enter Issue: ");
+		JLabel text3 = new JLabel("Issue: ");
 		text3.setFont(font);
 		qpanel.add(text3);
 		//qpanel.add(label3);

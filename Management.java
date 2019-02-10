@@ -6,9 +6,12 @@ import javax.swing.*;
 
 public class Management implements ActionListener{
 	final JFrame frame = new JFrame("Advice Giver");
-	private JPanel panel = new JPanel();
-	private JTextField textField = new JTextField(20);
-	private JLabel label2 = new JLabel("what");
+	private JPanel panel = new JPanel(new GridLayout(1, 1));
+	private JPanel fieldPanel = new JPanel(); 
+	
+	private JTextField textField = new JTextField(30);
+	
+	private JLabel label2 = new JLabel("");
 	private String question;
 	
 	public void initialize() {
@@ -20,19 +23,36 @@ public class Management implements ActionListener{
 		frame.getContentPane().add(panel);
 
 		//Drop Menu 
-		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
+	    frame.add(panel, BorderLayout.NORTH);
+	    frame.add(fieldPanel, BorderLayout.CENTER);
+
+	    // Combobox
+	    JLabel labelCombo = new JLabel("Overview of Complaint");
+
+	    // Options in the combobox
+	    String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
 				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
 				"Financial","Medical","Transport"};
-		
-		JComboBox<String> cBox = new JComboBox(concerns);
+	    
+	    JComboBox<String> cBox = new JComboBox(concerns);
+	    cBox.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                // Do something when you select the type of concern
+	            }
+	        });
+	    
 		cBox.setSelectedItem(null);
-		String selected = (String)cBox.getSelectedItem();
-		frame.getContentPane().add(cBox);
+		
+        // Add fields
+        fieldPanel.add(cBox);
+
+        
+        frame.getContentPane().add(cBox);
 
 	}
 	
-	public void buildPanel() {
-					
+	public void buildPanel() {				
 		//Labels
 		JLabel label = new JLabel("Enter Text: ");
 		// set the position of label2

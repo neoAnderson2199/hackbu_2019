@@ -71,7 +71,7 @@ public class Management implements ActionListener{
 		
 		//Image adding
 		 try {
-             image = new ImageIcon("light.jpg");  
+             image = new ImageIcon("./hackbu_2019/light.png");  
              Image im = image.getImage();
              Image newimg = im.getScaledInstance(70, 70,  java.awt.Image.SCALE_SMOOTH);
              image = new ImageIcon(newimg);

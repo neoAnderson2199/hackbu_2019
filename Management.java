@@ -48,7 +48,7 @@ public class Management implements ActionListener{
 		panel.add(ipanel);
 		panel.add(qpanel);
 		panel.add(opanel);
-		return panel;
+		return panel; 
 	}
 	
 	public JComboBox buildcBox() {

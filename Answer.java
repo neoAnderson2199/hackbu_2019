@@ -8,7 +8,7 @@ public class Answer {
 
 	public static String read_in(String input_file, int choice) {
 		String[] problem = input_file.split("\\s+");
-		try(Scanner keys = new Scanner(new FileReader("keyword.txt"))){
+		try(Scanner keys = new Scanner(new FileReader("./hackbu_2019/keyword.txt"))){
 			String all_keys = null;
 			int line = 0;
 			while(keys.hasNextLine()) {
@@ -33,7 +33,7 @@ public class Answer {
 				return reply(30);
 			}
 		}catch(FileNotFoundException e) {
-			System.out.println("Failed");
+			e.printStackTrace();
 			
 		}
 		return "-1";
@@ -106,10 +106,10 @@ public class Answer {
 		return "-1";
 	}
 
-	public static void main(String[] args){
-		String ans = Answer.read_in("sex", 6);
-		System.out.println(ans);
-	}
+	//public static void main(String[] args){
+	//	String ans = Answer.read_in("sex", 6);
+	//	System.out.println(ans);
+	//}
 }
 
 

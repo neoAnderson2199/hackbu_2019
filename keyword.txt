@@ -1,15 +1,15 @@
-food- undercooked,dirty,unclean,unsanitary,raw,poisoning,vegan,organic,allergy,allergies,allergic, : terrible,bland,bad,awful,disgusting,sweet,sour,bitter,bittersweet,acidic,spicy
-drugs- overdose,emergency,911,issues,addiction, : marijuana,alcohol,tobacco,nicotine,juul,vaping,vape,meth,crystal,heroin,narcotics,depressants,weed,hemp,hashish,brownies,cookies,brownie,cookie
-wellness- fitness,workout,gym,yoga,swimming,classes,running,weights,lifting : mental,counselor,psychologist,psychiatrist,happiness,sadness
-maintenance- bugs,rodents,infestation,bug,rodent,leaks,water,plumbing,clogged,pipes,shower,toilet,sink,bed,closet,vomit,mess,stain,electricity,electric,appliances,lighting,lights,desk,door,windows,blinds,power,outlets,outlet,
-technology- cybercrime,porn,pornography,wifi,wi-fi,pornographic,server,broken,crashed,internet,hacked,hack,hacking,down, : blue,screen,webcam,keyboard,camera,mouse,touchpad,router,
-teacher- love,attracted,sex,sexual,intercourse,extortion,extorted,inappropriate, : controversial,rude,libel,annoying,quiet,obnoxious,dumb,unknowledgeable,contact,email,information,tangents
-students- sexual,sex,intercourse,relationships,relationship,bad,distracted,smoking,juuling,vaping,smarter,idiotic, : obscene,bully,bullying,bullies,cheating,cheated,plagiarising,plagiarised,plagiarism
-classes- textbook,material,syllabus,information, : difficult,hard,challenging 
-future plans- graduate,master's,doctorate,major : careers,jobs,career,job,employment,resume,cover,letter,application,applications,interview,internship,internships,degree,
-housing- roommate,annoying,deadly,scary,noisey,creepy,loud,rude,invasive,touches,irritating,switch : neighbors,noise,party,parties,late,
-activities- clubs,activities,friends,lonely,interests,bored,change,other,
-money- accounts,none,no,more,zero, : where,bank,exchange,break,change,
-illnesses- vomiting,emergency,puking,throwing up,broken,failure,dying,911,suicidal,suicide : flu,cold,strep,virus,depression,anxiety,bipolar,schizophrenia,stress
-transport- bus,service,services,shuttle,routes, : zipcar,driving,
+,undercooked,dirty,unclean,unsanitary,raw,poisoning,vegan,organic,allergy,allergies,allergic, : terrible,bland,bad,awful,disgusting,sweet,sour,bitter,bittersweet,acidic,spicy
+,overdose,emergency,911,issues,addiction, : marijuana,alcohol,tobacco,nicotine,juul,vaping,vape,meth,crystal,heroin,narcotics,depressants,weed,hemp,hashish,brownies,cookies,brownie,cookie
+,fitness,workout,gym,yoga,swimming,classes,running,weights,lifting : mental,counselor,psychologist,psychiatrist,happiness,sadness
+,bugs,rodents,infestation,bug,rodent,leaks,water,plumbing,clogged,pipes,shower,toilet,sink,bed,closet,vomit,mess,stain,electricity,electric,appliances,lighting,lights,desk,door,windows,blinds,power,outlets,outlet,
+,cybercrime,porn,pornography,wifi,wi-fi,pornographic,server,broken,crashed,internet,hacked,hack,hacking,down, : blue,screen,webcam,keyboard,camera,mouse,touchpad,router,
+,love,attracted,sex,sexual,intercourse,extortion,extorted,inappropriate, : controversial,rude,libel,annoying,quiet,obnoxious,dumb,unknowledgeable,contact,email,information,tangents
+,sexual,sex,intercourse,relationships,relationship,bad,distracted,smoking,juuling,vaping,smarter,idiotic, : obscene,bully,bullying,bullies,cheating,cheated,plagiarising,plagiarised,plagiarism
+,textbook,material,syllabus,information, : difficult,hard,challenging 
+,graduate,master's,doctorate,major : careers,jobs,career,job,employment,resume,cover,letter,application,applications,interview,internship,internships,degree,
+,roommate,annoying,deadly,scary,noisey,creepy,loud,rude,invasive,touches,irritating,switch : neighbors,noise,party,parties,late,
+,clubs,activities,friends,lonely,interests,bored,change,other,
+,accounts,none,no,more,zero, : where,bank,exchange,break,change,
+,vomiting,emergency,puking,throwing up,broken,failure,dying,911,suicidal,suicide : flu,cold,strep,virus,depression,anxiety,bipolar,schizophrenia,stress
+,bus,service,services,shuttle,routes, : zipcar,driving,
 

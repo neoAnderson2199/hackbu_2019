@@ -6,19 +6,14 @@ import javax.swing.*;
 
 public class Management implements ActionListener{
 	final JFrame frame = new JFrame("Advice Giver");
-<<<<<<< HEAD
-	private JPanel panel = new JPanel(new GridLayout(1, 1));
-	private JPanel fieldPanel = new JPanel(); 
-	
-	private JTextField textField = new JTextField(30);
-	
-	private JLabel label2 = new JLabel("");
-=======
+
+	private JPanel fieldPanel = new JPanel(); 	
+
 	private JPanel panel = new JPanel();
 	private JLabel label2 = new JLabel();
 	private JLabel label3 = new JLabel();
 	private JTextField textField = new JTextField(20);
->>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
+
 	private String question;
 	private String selected;
 	
@@ -29,23 +24,10 @@ public class Management implements ActionListener{
 		frame.setVisible(true);
 		frame.add(buildPanel());
 
-<<<<<<< HEAD
+
 		//Drop Menu 
 	    frame.add(panel, BorderLayout.NORTH);
 	    frame.add(fieldPanel, BorderLayout.CENTER);
-
-	    // Combobox
-	    JLabel labelCombo = new JLabel("Overview of Complaint");
-
-	    // Options in the combobox
-	    String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
-=======
-/*
-		JComboBox<String> cBox = new JComboBox(concerns);
-		cBox.setSelectedItem(null);
-		selected = (String)cBox.getSelectedItem();
-		frame.getContentPane().add(cBox);
-*/
 	}
 
 	public JPanel buildPanel() {
@@ -73,11 +55,9 @@ public class Management implements ActionListener{
 	
 	public JComboBox buildcBox() {
 		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
->>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
 				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
 				"Financial","Medical","Transport"};
-<<<<<<< HEAD
-	    
+    
 	    JComboBox<String> cBox = new JComboBox(concerns);
 	    cBox.addActionListener(new ActionListener() {
 	            @Override
@@ -87,20 +67,15 @@ public class Management implements ActionListener{
 	        });
 	    
 		cBox.setSelectedItem(null);
-		
-        // Add fields
-        fieldPanel.add(cBox);
 
-        
+        // Add fields
+        fieldPanel.add(cBox);       
         frame.getContentPane().add(cBox);
 
-=======
-		JComboBox cBox = new JComboBox(concerns);
 		return cBox;
->>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
+
 	}
-	
-<<<<<<< HEAD
+	/*
 	public void buildPanel() {				
 		//Labels
 		JLabel label = new JLabel("Enter Text: ");
@@ -111,10 +86,8 @@ public class Management implements ActionListener{
 		panel.add(label2);
 		panel.add(textField);
 		panel.add(enterButton());
-	}
+	}*/
 
-=======
->>>>>>> branch 'master' of https://github.com/neoAnderson2199/hackbu_2019.git
 	public JButton enterButton() {
 		JButton enter = new JButton("Enter");
 		enter.addActionListener(this);

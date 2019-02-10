@@ -1,8 +1,8 @@
 package hackbu_2019;
 import java.awt.event.*;
 import java.awt.*;
-
 import javax.swing.*;
+
 
 public class Management implements ActionListener{
 	final JFrame frame = new JFrame("Advice Giver");
@@ -12,13 +12,15 @@ public class Management implements ActionListener{
 	private JLabel label2 = new JLabel();
 	private JLabel label3 = new JLabel();
 	private JLabel label4 = new JLabel();
+	private Font font = new Font("Serif", Font.PLAIN, 18);
 	private JTextField textField = new JTextField(20);
 	private JComboBox<String> cBox = new JComboBox<String>();
-	private String question;
-	private String selected;
+
+	private JComboBox<String> yBox = new JComboBox<String>();
+	private String question, selected1, selected2;
 	
 	public void initialize() {
-		frame.setSize(800,600);
+		frame.setSize(800,500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			       
 		frame.setVisible(true);
 		frame.add(buildPanel());
@@ -27,42 +29,78 @@ public class Management implements ActionListener{
 
 	public JPanel buildPanel() {
 		//Whole Panel
-		panel.setLayout(new GridLayout(3,1));
+		panel.setLayout(new GridLayout(5,1));
+		label2.setFont(font);
+		label3.setFont(font);
+		label4.setFont(font);
+
+		//Title Panel
+		JPanel tpanel = new JPanel();
+		JLabel title = new JLabel("Advice Giver");
+		title.setFont(new Font("Serif", Font.BOLD, 45));
+		tpanel.add(title);
+		//Y/N Panel
+		JPanel ypanel = new JPanel();
+		JLabel text1 = new JLabel("Do you have an issue: ");
+		text1.setFont(font);
+		ypanel.add(text1);
+		ypanel.add(buildyBox());
 		//Input Panel
 		JPanel ipanel = new JPanel();
-		ipanel.add(new JLabel("Enter Text: "));
+		JLabel text2 = new JLabel("Enter Issue: ");
+		text2.setFont(font);
+		ipanel.add(text2);
 		ipanel.add(textField);
-		ipanel.add(enterButton());
 		ipanel.add(buildcBox());
+		ipanel.add(enterButton());
 		//Question Panel
-		JPanel qpanel = new JPanel();
-		qpanel.add(new JLabel("your question:"));
-		qpanel.add(label3);
+		JPanel qpanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JLabel text3 = new JLabel("Enter Issue: ");
+		text3.setFont(font);
+		qpanel.add(text3);
+		//qpanel.add(label3);
 		qpanel.add(label2);
 		//Output Panel
-		JPanel opanel = new JPanel();
-		opanel.add(new JLabel("suggestion:"));
+		JPanel opanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JLabel text4 = new JLabel("Reply:");
+		text4.setFont(font);
+		opanel.add(text4);
 		opanel.add(label4);
 		//Panel
+		panel.add(tpanel);
+		panel.add(ypanel);
 		panel.add(ipanel);
 		panel.add(qpanel);
 		panel.add(opanel);
 		return panel; 
 	}
+
+	public JComboBox<String> buildyBox() {
+		String[] choice = {"<Select One>","Yes", "No"};    
+	    yBox = new JComboBox<String>(choice);
+	    yBox.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                selected1 = (String)yBox.getSelectedItem();
+	            }
+	        });
+		yBox.setSelectedItem(choice[0]);
+		return yBox;
+	}
 	
 
 	public JComboBox<String> buildcBox() {
-		String[] concerns = { "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
+		String[] concerns = {"<Select One>", "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
 				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
 				"Financial","Medical","Transport"};    
 	    cBox = new JComboBox<String>(concerns);
 	    cBox.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                selected = (String)cBox.getSelectedItem();
+	                selected2 = (String)cBox.getSelectedItem();
 	            }
 	        });
-		cBox.setSelectedItem(null);
+		cBox.setSelectedItem(concerns[0]);
 		return cBox;
 	}
 
@@ -75,16 +113,28 @@ public class Management implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
-		String action = ae.getActionCommand();
-        if (action.equals("Enter")) {
-            question = textField.getText();
-            label3.setText(selected);
-            int intVal = transtoInt(selected);
-            String output = Answer.read_in(question,intVal);
-            label4.setText(output);
-            label2.setText(question);
-            textField.setText("");
-        }
+	    String action = ae.getActionCommand();
+            if (action.equals("Enter")) {
+                String output;
+                question = textField.getText();
+                if(selected1.equals("<Select One>")){
+			output = Answer.reply(30);
+                }else if(selected1.equals("No")){
+                    output = Answer.reply(28);
+                } else{
+                    if(selected2.equals("<Select One>") || question.trim().equals("")){
+                        output = Answer.reply(30);
+                    } else{
+                        label3.setText(selected2);
+                        int intVal = transtoInt(selected2);
+                        output = Answer.read_in(question,intVal);
+                        label2.setText(question);
+                    }
+                }
+                label4.setText(output);
+                
+                textField.setText("");
+            }
 	}
 	
 	public int transtoInt(String input) {
@@ -105,7 +155,7 @@ public class Management implements ActionListener{
 			retVal = 6;
 		}else if(input.equals("Classes")) {
 			retVal = 7;
-		}else if(input.equals("Fulture Plans")) {
+		}else if(input.equals("Future Plans")) {
 			retVal = 8;
 		}else if(input.equals("Housing")) {
 			retVal = 9;

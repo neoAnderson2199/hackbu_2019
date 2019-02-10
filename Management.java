@@ -1,120 +1,183 @@
 package hackbu_2019;
-
-import java.util.*;
-import java.io.*;
+import java.awt.event.*;
 import java.awt.*;
+import javax.swing.*;
 
-public class Answer {
+public class Management implements ActionListener{
+	final JFrame frame = new JFrame("Advice Giver");
 
-	public static String read_in(String input_file, int choice) {
-		String[] problem = input_file.split("\\s+");
-		try(Scanner keys = new Scanner(new FileReader("keyword.txt"))){
-			String all_keys = null;
-			int line = 0;
-			while(keys.hasNextLine()) {
-				if(line == choice){
-					all_keys = keys.nextLine();
-					break;
-				}
-				keys.nextLine();
-				line++;
-			}
-			if(all_keys != null){
-				String[] category = all_keys.split(":");
-				String[] response1 = category[0].split(",");
-				String[] response2 = category[1].split(",");
-				for(int i=0; i<problem.length; i++){
-					if(Arrays.asList(response1).contains(problem[i].toLowerCase())){
-						return reply(choice*2);
-					}else if(Arrays.asList(response2).contains(problem[i].toLowerCase())){
-						return reply(choice*2 +1);
-					}
-				}
-				return reply(29);
-			}
-		}catch(FileNotFoundException e) {
-			e.printStackTrace();
-			
-		}
-		return "-1";
+	private JPanel fieldPanel = new JPanel(); 	
+	private JPanel panel = new JPanel();
+	private JLabel label2 = new JLabel();
+	private JLabel label3 = new JLabel();
+	private JLabel label4 = new JLabel();
+	private JLabel imagelabel;
+	
+	private Font font = new Font("Serif", Font.PLAIN, 18);
+	private JTextField textField = new JTextField(20);
+	private JComboBox<String> cBox = new JComboBox<String>();
+
+	private JComboBox<String> yBox = new JComboBox<String>();
+	private String question, selected1, selected2;
+	private ImageIcon image;
+	
+	public void initialize() {
+		frame.setSize(800,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			       
+		frame.setVisible(true);
+		frame.add(buildPanel());
+
 	}
 
-	public static String reply(int response){
-		Random rand = new Random();
-		if(response == 0){
-			return ("You should instead try buying food from the off campus or cooking for yourself.");
-		}else if(response == 1){
-			return ("Maybe you should try adding some soysauce because that makes very thing taste better.");
-		}else if(response == 2){
-			return ("Wow sounds serious. You should really tell someone about that.");
-		}else if(response == 3){
-			return ("Well that is not healthy so don't do it");
-		}else if(response == 4){
-			return ("Stop with the exercise. Just learn to love what you look like.");
-		}else if(response == 5){
-			return ("Just eat Cheerios to be happy and be healthy.");
-		}else if(response == 6){
-			return ("Eww, here's what we'll do. Tell everyone to move out and we'll burn down the building.");
-		}else if(response == 7){
-			return ("I understand. We will be sure to send someone over with duct tape.");
-		}else if(response == 8){
-			return ("Ok, just text this number: (555)NOT-LOST with your credit card information.");
-		}else if(response == 9){
-			return ("So you want to just throw that out and buy a new one.");
-		}else if(response == 10){
-			return ("I'm sorry I don't understand, but I'm sure everything is fine.");
-		}else if(response == 11){
-			return ("Well I am sure that they are smarter than you so stop complaining.");
-		}else if(response == 12){
-			return ("What ever you kids in your private time is not a concern for us.");
-		}else if(response == 13){
-			return ("The best advice we can give you is to learn to fight and settle this yourselves.");
-		}else if(response == 14){
-			return ("You should really be contacting your teacher for this information.");
-		}else if(response == 15){
-			return ("Stick with it. I know you can make it.");
-		}else if(response == 16){
-			return ("You need to think about that your self. We are not supposed to be telling you how to live your life.");
-		}else if(response == 17){
-			return ("I really want to help you, but with your grades ...");
-		}else if(response == 18){
-			return ("Well it is too late to move you. So all we can tell you is that you should think about living off campus next semester.");
-		}else if(response == 19){
-			return ("You should just go join in the fun, you party pooper.");
-		}else if(response == 20){
-			return ("We can't force you to do anything, so decide for yourself what you want to do.");
-		}else if(response == 21){
-			return ("You know what you should make some more friends and do stuff with them.");
-		}else if(response == 22){
-			return ("Ohh you have no money. That's great news. We needed more room for residents.");
-		}else if(response == 23){
-			return ("Yes we can exchange your money for you just email all your information to us.");
-		}else if(response == 24){
-			return ("Were you making food?");
-		}else if(response == 25){
-			return ("What you want to do is lock yourself in your room and quarantine yourself.");
-		}else if(response == 26){
-			return ("If you are so worried about that stuff just drive yourself.");
-		}else if(response == 27){
-			return ("If you are so worried about that don't bring your car.");
-		}else if(response == 28){
-			return ("Why are you even on this if you don't have an issue?");
-		}else if(response == 29){
-			int num = rand.nextInt(5);
-			if (num == 0){
-				return ("I do not understand your issue can you explain it more.");
-			}else if(num == 1){
-				return ("Haha. You call that an issue?");
-			}else if(num == 2){
-				return ("And you think I can solve that?");
-			}else if(num == 3){
-				return ("Well that's not my problem.");
-			}else{
-				return ("Good luck to you.");
-			}
-		}else if(response == 30){
-			return ("Invalid input.");
+	public JPanel buildPanel() {
+		//Whole Panel
+		panel.setLayout(new GridLayout(5,1));
+		label2.setFont(font);
+		label3.setFont(font);
+		label4.setFont(font);
+
+		//Title Panel
+		JPanel tpanel = new JPanel();
+		JLabel title = new JLabel("Advice Giver");
+		title.setFont(new Font("Serif", Font.BOLD, 45));
+		tpanel.add(title);
+		//Y/N Panel
+		JPanel ypanel = new JPanel();
+		JLabel text1 = new JLabel("Do you have an issue: ");
+		text1.setFont(font);
+		ypanel.add(text1);
+		ypanel.add(buildyBox());
+		//Input Panel
+		JPanel ipanel = new JPanel();
+		JLabel text2 = new JLabel("Enter Issue: ");
+		text2.setFont(font);
+		ipanel.add(text2);
+		ipanel.add(textField);
+		ipanel.add(buildcBox());
+		ipanel.add(enterButton());
+		//Question Panel
+		JPanel qpanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JLabel text3 = new JLabel("Issue: ");
+		text3.setFont(font);
+		qpanel.add(text3);
+		//qpanel.add(label3);
+		qpanel.add(label2);
+		//Output Panel
+		JPanel opanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JLabel text4 = new JLabel("Reply:");
+		text4.setFont(font);
+		opanel.add(text4);
+		opanel.add(label4);
+		
+		//Image adding
+		 try {
+             image = new ImageIcon("mustard.jpg");
+             imagelabel = new JLabel("",image, JLabel.CENTER); 
+             tpanel.add(imagelabel);
+         }catch(Exception e) {}
+		//Panel
+		panel.add(tpanel);
+		panel.add(ypanel);
+		panel.add(ipanel);
+		panel.add(qpanel);
+		panel.add(opanel);
+		return panel; 
+	}
+
+	public JComboBox<String> buildyBox() {
+		String[] choice = {"<Select One>","Yes", "No"};    
+	    yBox = new JComboBox<String>(choice);
+	    yBox.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                selected1 = (String)yBox.getSelectedItem();
+	            }
+	        });
+		yBox.setSelectedItem(choice[0]);
+		return yBox;
+	}
+	
+
+	public JComboBox<String> buildcBox() {
+		String[] concerns = {"<Select One>", "Food", "Drugs/Alcohol","Fitness/Wellness", "Maintenance",
+				"Technology","Teachers", "Students","Classes","Future Plans", "Housing", "Activities",
+				"Financial","Medical","Transport"};    
+	    cBox = new JComboBox<String>(concerns);
+	    cBox.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                selected2 = (String)cBox.getSelectedItem();
+	            }
+	        });
+		cBox.setSelectedItem(concerns[0]);
+		return cBox;
+	}
+
+
+	public JButton enterButton() {
+		JButton enter = new JButton("Enter");
+		enter.addActionListener(this);
+		return enter;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+	    String action = ae.getActionCommand();
+            if (action.equals("Enter")) {
+                String output;
+                question = textField.getText();
+                if(selected1.equals("<Select One>")){
+                	output = Answer.reply(30);
+                }else if(selected1.equals("No")){
+                    output = Answer.reply(28);
+                } else{
+                    if(selected2.equals("<Select One>") || question.trim().equals("")){
+                        output = Answer.reply(30);
+                    } else{
+                        label3.setText(selected2);
+                        int intVal = transtoInt(selected2);
+                        output = Answer.read_in(question,intVal);
+                        label2.setText(question);
+                    }
+                }
+                label4.setText(output);
+                
+                textField.setText("");
+            }
+	}
+	
+	public int transtoInt(String input) {
+		int retVal = -1;
+		if(input.equals("Food")){
+			retVal = 0;
+		}else if(input.equals("Drugs/Alcohol")){
+			retVal = 1;
+		}else if(input.equals("Fitness/Wellness")){
+			retVal = 2;
+		}else if(input.equals("Maintenance")) {
+			retVal = 3;
+		}else if(input.equals("Technology")) {
+			retVal = 4;
+		}else if(input.equals("Teachers")) {
+			retVal = 5;
+		}else if(input.equals("Students")) {
+			retVal = 6;
+		}else if(input.equals("Classes")) {
+			retVal = 7;
+		}else if(input.equals("Future Plans")) {
+			retVal = 8;
+		}else if(input.equals("Housing")) {
+			retVal = 9;
+		}else if(input.equals("Activities")) {
+			retVal = 10;
+		}else if(input.equals("Financial")) {
+			retVal = 11;
+		}else if(input.equals("Medical")) {
+			retVal = 12;
+		}else {
+			retVal = 13;
 		}
-		return "-1";
+		return retVal;
 	}
 }
+

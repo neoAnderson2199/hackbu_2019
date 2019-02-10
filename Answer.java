@@ -20,7 +20,7 @@ public class Answer {
 				line++;
 			}
 			if(all_keys != null){
-				String[] category = all_keys.split(" : ");
+				String[] category = all_keys.split(":");
 				String[] response1 = category[0].split(",");
 				String[] response2 = category[1].split(",");
 				for(int i=0; i<problem.length; i++){
